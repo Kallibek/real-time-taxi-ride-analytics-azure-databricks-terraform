@@ -1,0 +1,14 @@
+commands.md
+.env
+terraform/.terraform
+info/
+.venv/
+src/taxi_eventhub_connection_string.txt
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+data/yellow_tripdata_2024-11.csv
+combined_output.txt
+filelist original.txt
+filelist.txt
+Misc/note.txt
+temp/
