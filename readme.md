@@ -52,9 +52,6 @@ ARM_TENANT_ID=
 - **Terraform Scripts**  
   All infrastructure components are provisioned using Terraform. The Terraform configuration files are located under the `terraform/` directory.
 
-Below is **Part 2** of the README file, which details the project structure, key modules, and file descriptions.
-
----
 
 # Project Structure and Key Modules
 
@@ -83,7 +80,7 @@ Below is **Part 2** of the README file, which details the project structure, key
 │   ├── databricks_dashboard.png
 │   ├── databricks_streaming_workflow.png
 │   ├── data_architecture_diagram.png
-│   ├── real-time-passenger-count-by-vendor.mp4
+│   ├── real-time-passenger-count-by-vendor.gif
 │   ├── ride_count_plot.png
 │   └── total_fare_by_payment_type_plot.png
 ├── src/
@@ -148,31 +145,7 @@ This folder contains Databricks notebooks that manage the end-to-end ETL workflo
 
 ### Screenshots Directory
 
-This folder hosts various visual assets that illustrate the project architecture and workflows:
-
-- **[screenshots/adf_pipiline_screenshot.png](screenshots/adf_pipiline_screenshot.png)**  
-  A screenshot of the Azure Data Factory pipeline used for data ingestion.
-
-- **[screenshots/databricks_batch_workflow.png](screenshots/databricks_batch_workflow.png)**  
-  Visualizes the batch processing workflow in Databricks.
-
-- **[screenshots/databricks_dashboard.png](screenshots/databricks_dashboard.png)**  
-  Displays the interactive dashboard for taxi ride analytics.
-
-- **[screenshots/databricks_streaming_workflow.png](screenshots/databricks_streaming_workflow.png)**  
-  Diagram of the real-time streaming data pipeline.
-
-- **[screenshots/data_architecture_diagram.png](screenshots/data_architecture_diagram.png)**  
-  Provides an overview of the complete data architecture.
-
-- **[screenshots/real-time-passenger-count-by-vendor.mp4](screenshots/real-time-passenger-count-by-vendor.mp4)**  
-  A video showcasing real-time analytics on passenger counts.
-
-- **[screenshots/ride_count_plot.png](screenshots/ride_count_plot.png)**  
-  Example plot showing ride count trends.
-
-- **[screenshots/total_fare_by_payment_type_plot.png](screenshots/total_fare_by_payment_type_plot.png)**  
-  Visualization of total fare breakdown by payment type.
+This folder hosts various visual assets that illustrate the project architecture and workflows.
 
 ### Source Directory
 
@@ -221,8 +194,20 @@ Holds all Terraform configuration files for deploying and managing Azure resourc
 - **Streaming Processing:**  
   Real-time data ingestion is managed by the streaming notebooks ([source_to_bronze_streaming.py](notebooks/source_to_bronze_streaming.py) and [bronze_to_silver_streaming.py](notebooks/bronze_to_silver_streaming.py)), which process live data from Azure Event Hubs and update the Silver layer accordingly.
 
+  **Real-time data streaming - Passenger Count by Vendor ID :**
+
+  ![screenshots/real-time-passenger-count-by-vendor.gif](screenshots/real-time-passenger-count-by-vendor.gif)
+
 - **Aggregation & Analytics:**  
   The [silver_to_gold.py](notebooks/silver_to_gold.py) notebook aggregates data to form Gold tables that support analytics, while [dashboard.py](notebooks/dashboard.py) facilitates interactive querying and visualization.
+
+  **Example plot showing ride count trends:**
+
+  ![screenshots/ride_count_plot.png](screenshots/ride_count_plot.png)
+
+  **Visualization of total fare breakdown by payment type:**
+
+  ![screenshots/total_fare_by_payment_type_plot.png](screenshots/total_fare_by_payment_type_plot.png)
 
 ### Data Generation & Simulation
 
@@ -232,10 +217,6 @@ Holds all Terraform configuration files for deploying and managing Azure resourc
 - **Real-Time Event Simulation:**  
   Real-time event simulation is performed by [generate_real_time_taxi_data.py](src/generate_real_time_taxi_data.py), which sends updated taxi events to Azure Event Hubs for ingestion.
 
-Below is **Part 3** of the README file, covering setup instructions, deployment steps, and usage guidelines.
-
----
-
 # Setup, Deployment, and Usage
 
 ## Prerequisites
@@ -244,7 +225,7 @@ Below is **Part 3** of the README file, covering setup instructions, deployment 
 - **Databricks Workspace:** An Azure Databricks workspace is required to run the notebooks.
 - **Terraform:** Install Terraform (v0.14 or later) to deploy infrastructure.
 - **Python 3.8+:** Make sure Python is installed along with required libraries (e.g., pandas, numpy, azure-eventhub).
-- **.env File:** Create a `.env` file with your Azure credentials as shown in Part 1.
+- **.env File:** Create a `.env` file with your Azure credentials
 
 ## Environment Setup
 
